@@ -58,7 +58,6 @@ def add_user():
     try:
         data = request.get_json()
         
-        # Validate input
         if not data or not data.get('username') or not data.get('email'):
             return jsonify({'error': 'Username and email are required'}), 400
 
@@ -151,7 +150,6 @@ def update_item(item_id):
 
         data = request.get_json()
         
-        # Update fields if provided
         if 'name' in data:
             item.name = data['name']
         if 'category' in data:
@@ -187,7 +185,6 @@ def delete_item(item_id):
 @app.route('/api/health', methods=['GET'])
 def health_check():
     try:
-        # Test database connection
         db.session.execute('SELECT 1')
         return jsonify({'status': 'healthy', 'database': 'connected'}), 200
     except Exception as e:
