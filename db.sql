@@ -64,15 +64,3 @@ CREATE INDEX idx_users_created_at ON users(created_at);
 
 CREATE USER IF NOT EXISTS 'hitesh'@'localhost' IDENTIFIED BY 'hitesh123';
 GRANT ALL PRIVILEGES ON ecorecycle.* TO 'hitesh'@'localhost';
-FLUSH PRIVILEGES;
-
-SHOW TABLES;
-
-SELECT 'Users Table:' AS info;
-SELECT * FROM users;
-
-SELECT 'Electronic Items Table:' AS info;
-SELECT * FROM electronic_items;
-
-SELECT 'Items with Sellers View:' AS info;
-SELECT * FROM items_with_sellers LIMIT 5;
